@@ -25,6 +25,9 @@ body {
 .box-shadow-hover-del:hover {
   filter: drop-shadow(0 0 4px rgba(217, 28, 38, 2.50));
 }
+.box-shadow-hover-done:hover {
+  filter: drop-shadow(0 0 4px rgb(1, 204, 70));
+}
 .box-shadow-bg {
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 2.50));
 }
