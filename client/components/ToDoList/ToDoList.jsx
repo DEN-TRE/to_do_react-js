@@ -12,7 +12,7 @@ const ToDoList = ({ todos }) => {
       <li className="flex flex-row justify-start">
         <ButtonDone />
         <div
-          className="w-56 items-center border border-orange-300 box-shadow-hover-2 rounded-lg flex-grow flex-row flex bg-purple-900 shadow-lg px-2 ml-2 mr-4 my-2 py-2"
+          className="w-56 flex-grow flex-row flex text-xs md:text-base items-center border border-orange-300 box-shadow-hover-2 rounded-lg bg-purple-900 shadow-lg px-2 ml-2 mr-4 my-2 py-2"
           key={id}
         >
           {/* eslint-disable-next-line react/jsx-props-no-spreading */}
