@@ -7,6 +7,7 @@ import ButtonDone from './Button-Done'
 
 const ToDoList = ({ todos }) => {
   const todosItem = todos.map((item) => {
+    // Разделим ключи объекта todos на две части: id и остальные.
     const { id, ...itemProps } = item
     return (
       <li className="flex flex-row justify-start">

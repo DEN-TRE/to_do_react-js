@@ -24,7 +24,7 @@ const App = () => {
   const loginBox = <span>Log in please</span>
 
   return (
-    <div className="w-full h-screen flex bg-local bg-cover container-img-bg text-gray-500 p-4 md:p-6 items-center justify-center">
+    <div className="w-full h-screen flex bg-scroll bg-cover container-img-bg text-gray-500 p-4 md:p-6 items-center justify-center">
       <form className="w-full max-w-3xl bg-indigo-900 shadow-2xl box-shadow-bg rounded-lg px-8 pt-6 pb-6 mb-4">
         <form className="mb-4">
           {isLoggedIn ? null : loginBox}
