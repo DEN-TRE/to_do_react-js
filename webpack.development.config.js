@@ -33,7 +33,7 @@ const config = {
     hot: true,
     contentBase: path.resolve(__dirname, 'dist/assets'),
     watchContentBase: true,
-    host: 'localhost',
+    host: '0.0.0.0',
     port: 3001,
 
     historyApiFallback: true,
@@ -67,18 +67,12 @@ const config = {
     rules: [
       {
         enforce: 'pre',
-        test: /\.(js|jsx)$/,
+        test: /\.js$/,
         exclude: /node_modules/,
-        resolve: {
-          extensions: ['.js', '.jsx']
-        },
         loader: 'eslint-loader'
       },
       {
-        test: /\.(js|jsx)$/,
-        resolve: {
-          extensions: ['.js', '.jsx']
-        },
+        test: /\.js$/,
         include: path.resolve(__dirname, 'client'),
         loaders: ['thread-loader', 'babel-loader'],
         exclude: /node_modules/

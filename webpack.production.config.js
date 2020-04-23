@@ -3,7 +3,7 @@ require('dotenv').config()
 const webpack = require('webpack')
 const glob = require('glob')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-// const PurgecssPlugin = require('purgecss-webpack-plugin')
+const PurgecssPlugin = require('purgecss-webpack-plugin')
 const TerserJSPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
@@ -51,18 +51,12 @@ const config = {
     rules: [
       {
         enforce: 'pre',
-        test: /\.(js|jsx)$/,
-        resolve: {
-          extensions: ['.js', '.jsx']
-        },
+        test: /\.js$/,
         exclude: /node_modules/,
         loader: 'eslint-loader'
       },
       {
-        test: /\.(js|jsx)$/,
-        resolve: {
-          extensions: ['.js', '.jsx']
-        },
+        test: /\.js$/,
         loaders: ['babel-loader'],
         exclude: /node_modules/
       },
@@ -208,9 +202,9 @@ const config = {
       chunkFilename: '[id].css',
       ignoreOrder: false
     }),
-    // new PurgecssPlugin({
-    //   paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true })
-    // }),
+    new PurgecssPlugin({
+      paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true })
+    }),
     new CopyWebpackPlugin([{ from: 'assets/images', to: 'images' }]),
     new CopyWebpackPlugin([{ from: 'assets/fonts', to: 'fonts' }]),
 

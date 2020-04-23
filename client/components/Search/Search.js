@@ -1,10 +1,7 @@
 import React from 'react'
 
-// eslint-disable-next-line import/no-named-as-default
 import ButtAll from './Butt-All'
-// eslint-disable-next-line import/no-named-as-default
 import ButtActive from './Butt-Active'
-// eslint-disable-next-line import/no-named-as-default
 import ButtDone from './Butt-Done'
 
 const Search = () => {

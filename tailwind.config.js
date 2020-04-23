@@ -11,14 +11,8 @@ module.exports = {
         'green-1000': '#A6DA00',
         'indigo-1000': '#714aaa'
       },
-      height: () => ({
-        'screen-90': '90vh'
-      }),
       fontSize: {
         '7xl': '5rem'
-      },
-      inset: {
-        '1/2': '50%'
       }
     }
   },

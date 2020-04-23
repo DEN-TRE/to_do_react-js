@@ -1,7 +1,7 @@
 {
-  "name": "tall-and-round",
+  "name": "boilerplate-skillcrucial",
   "version": "0.0.1",
-  "description": "Tall&Round",
+  "description": "Boilerplate SkillCrucial",
   "main": "index.js",
   "scripts": {
     "docker-start-dev": "docker-compose -f \"docker\\DEV.docker-compose.yml\" up",
@@ -13,7 +13,7 @@
     "clean": "rimraf dist",
     "build": "cross-env npm run clean && webpack --config webpack.production.config.js --progress --profile --colors",
     "lint": "eslint ./client/**/**.js ./server/**/**.js ",
-    "prettier": "prettier ./client/**/**.js ./client/**/**.jsx ./server/**/**.js --write ",
+    "prettier": "prettier ./client/**/**.js ./server/**/**.js --write ",
     "lint:server": "eslint ./server/**/**.js",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -89,7 +89,7 @@
     "express": "^4.17.1",
     "git-revision-webpack-plugin": "^3.0.4",
     "history": "^4.10.1",
-    "next": "^9.1.5",
+    "next": "^9.3.2",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-import": "^12.0.1",
     "postcss-preset-env": "^6.7.0",

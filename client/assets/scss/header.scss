@@ -1,0 +1,40 @@
+.animation-gradient {
+  animation: anime infinite 40s linear
+}
+
+@keyframes anime {
+  0% {
+    color: #b6e84c;
+  }
+  10% {
+    color: #d2c135;
+  }
+  20% {
+    color: #ffa372
+  }
+  30% {
+    color: #ea9085
+  }
+  40% {
+    color: #fdd998
+  }
+  50% {
+    color: #ffecc7
+  }
+  60% {
+    color: #77d8d8
+  }
+  70% {
+    color: #00bcd4
+  }
+  80% {
+    color: #189d9a
+  }
+  90% {
+    color: #4593c0
+  }
+  100% {
+    color: #b6e84c
+  }
+}
+
