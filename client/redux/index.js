@@ -2,15 +2,15 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import { routerMiddleware } from 'connected-react-router'
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
-// import SockJS from 'sockjs-client'
+import SockJS from 'sockjs-client'
 
 import rootReducer from './reducers'
 import createHistory from './history'
-// import socketActions from './sockets'
+import socketActions from './sockets'
 
 export const history = createHistory()
 
-// const isBrowser = typeof window !== 'undefined'
+const isBrowser = typeof window !== 'undefined'
 
 const initialState = {}
 const enhancers = []
@@ -22,34 +22,34 @@ const composedEnhancers = composeFunc(applyMiddleware(...middleware), ...enhance
 
 const store = createStore(rootReducer(history), initialState, composedEnhancers)
 
-// let socket
-//
-// const initSocket = () => {
-//   socket = new SockJS(`${isBrowser ? window.location.origin : 'http://localhost'}/ws`)
+let socket
 
-// socket.onopen = () => {
-//   store.dispatch(socketActions.connected)
-// }
-//
-// socket.onmessage = (message) => {
-//   // eslint-disable-next-line no-console
-//   console.log(message)
-//
-//   // socket.close();
-// }
+const initSocket = () => {
+  socket = new SockJS(`${isBrowser ? window.location.origin : 'http://localhost'}/ws`)
 
-//   socket.onclose = () => {
-//     store.dispatch(socketActions.disconnected)
-//     setTimeout(() => {
-//       initSocket()
-//     }, 2000)
-//   }
-// }
+  socket.onopen = () => {
+    store.dispatch(socketActions.connected)
+  }
 
-// initSocket()
+  socket.onmessage = (message) => {
+    // eslint-disable-next-line no-console
+    console.log(message)
 
-// export function getSocket() {
-//   return socket
-// }
+    // socket.close();
+  }
+
+  socket.onclose = () => {
+    store.dispatch(socketActions.disconnected)
+    setTimeout(() => {
+      initSocket()
+    }, 2000)
+  }
+}
+
+initSocket()
+
+export function getSocket() {
+  return socket
+}
 
 export default store
